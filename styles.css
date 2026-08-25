@@ -196,8 +196,52 @@ h1 {
   line-height: 1.55;
 }
 
-.project-list {
+.credential-list,
+.project-list,
+.tool-list {
   border-top: 1px solid var(--line);
+}
+
+.credential-row {
+  min-height: 180px;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.credential-year {
+  padding: 31px 28px 31px 0;
+  border-right: 1px solid var(--line);
+  color: #9a9a9a;
+  font-size: 0.76rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.credential-content {
+  padding: 28px 0 32px 42px;
+}
+
+.credential-content h2 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 2.8vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.credential-content p {
+  margin: 0 0 10px;
+  color: #e6e6e6;
+  font-size: 1rem;
+}
+
+.credential-content span {
+  color: #8d8d8d;
+  font-size: 0.76rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 .project-row {
@@ -255,10 +299,6 @@ h1 {
 
 .tools {
   padding-bottom: 110px;
-}
-
-.tool-list {
-  border-top: 1px solid var(--line);
 }
 
 .tool-row {
@@ -336,6 +376,10 @@ h1 {
     padding-left: 0;
   }
 
+  .credential-row {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+
   .project-meta {
     min-height: auto;
     padding: 22px 0 17px;
@@ -410,6 +454,20 @@ h1 {
 
   .about-copy {
     font-size: 1rem;
+  }
+
+  .credential-row {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-year {
+    padding: 20px 0 14px;
+    border-right: 0;
+    border-bottom: 1px solid var(--soft-line);
+  }
+
+  .credential-content {
+    padding: 26px 0 30px;
   }
 
   .project-content h2 {
