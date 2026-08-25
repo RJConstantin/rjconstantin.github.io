@@ -22,6 +22,9 @@
     .project-item[open] summary::after{content:"−"!important}
     .project-body{display:block!important;padding:0 0 34px!important}
     .project-description{max-width:760px!important;margin:0 0 18px!important;color:#687271!important;font-size:1rem!important;line-height:1.7!important}
+    .project-description p{margin:0 0 12px!important}
+    .project-description ul{margin:8px 0 14px!important;padding-left:22px!important}
+    .project-description li{margin-bottom:8px!important}
     .project-preview{width:100%!important;max-width:560px!important;margin-top:4px!important}
     .project-preview img{display:block!important;width:100%!important;height:320px!important;object-fit:contain!important;background:#eef0ed!important;border:1px solid #d7dcda!important;border-radius:10px!important;padding:12px!important}
     .project-full-link{display:inline-block!important;margin-top:10px!important;color:#2d5963!important;font-size:.76rem!important;font-weight:800!important;letter-spacing:.06em!important;text-transform:uppercase!important}
@@ -94,14 +97,17 @@
     <section class="section-block projects" id="projects">
       <div class="section-head">
         <div><p class="kicker">Selected Work</p><h1>Projects</h1></div>
-        <p>Select a project to view a short description and map.</p>
+        <p>Select a project to view a description and map.</p>
       </div>
 
       <div class="project-list">
         <details class="project-item">
           <summary>Crown Land Reservations</summary>
           <div class="project-body">
-            <p class="project-description">Prepared spatial data and regulatory mapping for Crown Land Reservation applications, including conflict review, attribute validation, QA/QC and final submission mapping.</p>
+            <div class="project-description">
+              <p>The CLR process begins with client-provided GPS center points for proposed sites. These points are converted into shapefiles and incorporated into a structured geodatabase. Existing disposition data (DIDs layer) and high-resolution aerial imagery are reviewed to identify potential conflicts at the proposed locations. Attribute tables are enriched using joins and spatial joins to ensure all required regulatory information is captured.</p>
+              <p>High-quality map layouts are then produced to accompany the CLR application, with standardized symbology, labels, and supporting information for regulatory review. QA/QC is completed on all spatial data, including projection checks and attribute validation, to ensure consistency with provincial submission standards. Once finalized, shapefiles and mapping packages are submitted through the DRAS system as part of the CLR application.</p>
+            </div>
             <div class="project-preview">
               <img loading="lazy" src="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg/v1/fill/w_360,h_593,al_c/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" alt="Crown Land Reservations GIS project map">
               <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
@@ -112,10 +118,12 @@
         <details class="project-item">
           <summary>Tree Planting Quality Assessment</summary>
           <div class="project-body">
-            <p class="project-description">Used Survey123 and Field Maps to collect and review post-planting assessment data and summarize stocking, species mix and site conditions for follow-up and monitoring.</p>
+            <div class="project-description">
+              <p>Completed a post-planting survey to verify stocking and species mix against the silviculture prescription and provincial regeneration standards. Designed and deployed Survey123 and Field Maps for consistent plot and tally data, including geo-tagged photos and notes on microsite, competing vegetation, and site prep. Performed QA/QC on incoming records, corrected geometry and projections, standardized attributes, and linked photos to features. Summarized stocking, density, and free-to-grow indicators by block and polygon, and produced a clean geodatabase with field points, plot summaries, and map layouts for stakeholders. Deliverables included a concise findings memo, PDF map series for field follow-up, and a data package suitable for ongoing monitoring and certification tracking.</p>
+            </div>
             <div class="project-preview">
-              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg/v1/fill/w_360,h_571,al_c/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" alt="Tree Planting Quality Assessment GIS project">
-              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_13c59c3e5e00473b98b3e826a8359b42~mv2.jpeg/v1/fill/w_1825,h_911,q_90,enc_avif,quality_auto/f94030_13c59c3e5e00473b98b3e826a8359b42~mv2.jpeg" alt="Tree Planting Quality Assessment GIS project">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_13c59c3e5e00473b98b3e826a8359b42~mv2.jpeg/v1/fill/w_1825,h_911,q_90,enc_avif,quality_auto/f94030_13c59c3e5e00473b98b3e826a8359b42~mv2.jpeg" target="_blank" rel="noopener">View full map ↗</a>
             </div>
           </div>
         </details>
@@ -123,7 +131,16 @@
         <details class="project-item">
           <summary>Wildhay River Basin Erosion</summary>
           <div class="project-body">
-            <p class="project-description">Compared stream density, steep slopes and linear disturbance across five sub-basins to identify areas with greater erosion and disturbance concerns.</p>
+            <div class="project-description">
+              <p>This map shows an environmental breakdown of the Wildhay Basin in Alberta. I divided the basin into five sub-basins and compared them using several key factors:</p>
+              <ul>
+                <li><strong>Stream Density</strong> – Calculated to understand water flow across the landscape.</li>
+                <li><strong>Steep Slopes (over 45°)</strong> – Highlighted to flag areas prone to erosion or stability issues.</li>
+                <li><strong>Linear Disturbances</strong> – Mapped roads, seismic lines, and crossings to show where land use has altered natural areas.</li>
+                <li><strong>Combined Disturbance</strong> – Summarized all disturbances into one layer to help spot high-impact zones.</li>
+              </ul>
+              <p>I prepared the symbology, data calculations, and layout using ArcGIS Pro, including all the cartographic elements and technical references.</p>
+            </div>
             <div class="project-preview">
               <img loading="lazy" src="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg/v1/fill/w_540,h_360,al_c/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" alt="Wildhay River Basin Erosion analysis map">
               <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
@@ -134,7 +151,9 @@
         <details class="project-item">
           <summary>Anthropogenic Disturbance on Caribou</summary>
           <div class="project-body">
-            <p class="project-description">Mapped woodland caribou ranges with land use and industrial disturbance to show overlap with environmentally sensitive habitat and support interpretation of cumulative effects.</p>
+            <div class="project-description">
+              <p>This map shows the spatial distribution of woodland caribou ranges across northern Alberta, highlighting where regulated caribou habitat overlaps with existing land use. The intent is to provide context for environmental sensitivity by clearly delineating range boundaries relative to administrative areas and industrial disturbance. By including these ranges, the map supports interpretation of regulatory constraints and helps frame subsequent analysis around land use planning, cumulative effects, and wildlife protection considerations.</p>
+            </div>
             <div class="project-preview">
               <img loading="lazy" src="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg/v1/fill/w_360,h_466,al_c/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" alt="Caribou anthropogenic disturbance map">
               <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
@@ -145,7 +164,9 @@
         <details class="project-item">
           <summary>Alberta Orphan Wells</summary>
           <div class="project-body">
-            <p class="project-description">Mapped the spatial distribution of oil and gas wells to show development intensity and provide context for reclamation, land use and environmental analysis.</p>
+            <div class="project-description">
+              <p>This map illustrates the spatial distribution of oil and gas wells across the study area to provide context on the intensity and pattern of industrial development. Wells are shown to highlight areas of concentrated activity versus regions with relatively limited disturbance, allowing the viewer to quickly assess how development is distributed across administrative boundaries. The map supports interpretation of cumulative land use impacts and serves as a baseline for comparing well density, operator presence, and relationships to other mapped themes such as reclamation status or environmental constraints.</p>
+            </div>
             <div class="project-preview">
               <img loading="lazy" src="https://static.wixstatic.com/media/f94030_a9caf26088dd4e0887ad10de772c9469~mv2.jpg" alt="Alberta Orphan Wells thematic map">
               <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_a9caf26088dd4e0887ad10de772c9469~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
@@ -156,7 +177,9 @@
         <details class="project-item">
           <summary>Human Development in Africa</summary>
           <div class="project-body">
-            <p class="project-description">Created a bivariate choropleth comparing life expectancy and gross national income across African countries, supported by individual reference maps for each variable.</p>
+            <div class="project-description">
+              <p>This map examines the relationship between life expectancy and gross national income per capita across African countries in 2013 using a bivariate choropleth. The central map combines both variables into a single symbology to reveal how economic conditions and health outcomes vary together spatially, while the two smaller maps isolate each variable to provide additional context. This layout allows for direct comparison between income and life expectancy patterns, supporting interpretation of human development levels and highlighting regions where economic capacity and health outcomes are aligned or diverge.</p>
+            </div>
             <div class="project-preview">
               <img loading="lazy" src="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg/v1/fill/w_540,h_349,al_c/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" alt="Human Development in Africa bivariate map">
               <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
