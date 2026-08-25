@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ryan Constantin | GIS, environmental, regulatory and forestry portfolio">
   <title>Ryan Constantin | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="gallery.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <style>
+    .project-gallery{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;align-items:start!important}
+    .project-link{display:block!important;overflow:hidden!important;border:1px solid #d7dcda!important;border-radius:14px!important;background:#fff!important;text-decoration:none!important;color:inherit!important;box-shadow:0 8px 24px rgba(31,41,40,.05)!important;transition:transform .16s ease,box-shadow .16s ease!important;cursor:pointer!important}
+    .project-link:hover{transform:translateY(-3px)!important;box-shadow:0 14px 30px rgba(31,41,40,.10)!important}
+    .project-thumb{height:180px!important;padding:10px!important;background:#eef0ed!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+    .project-thumb img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important}
+    .project-caption{min-height:92px!important;padding:14px 16px 18px!important}
+    .project-caption span{display:block!important;margin-bottom:6px!important;color:#2d5963!important;font-size:.66rem!important;font-weight:800!important;letter-spacing:.09em!important;text-transform:uppercase!important}
+    .project-caption h2{margin:0!important;font-size:1.25rem!important;line-height:1.12!important}
+    .project-open{display:block!important;margin-top:9px!important;color:#687271!important;font-size:.72rem!important;font-weight:700!important}
+    @media(max-width:900px){.project-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}.project-thumb{height:170px!important}}
+    @media(max-width:560px){.project-gallery{grid-template-columns:1fr!important}.project-thumb{height:220px!important}}
+  </style>
 </head>
 <body>
   <header class="masthead" id="home">
@@ -32,14 +44,8 @@
         <details>
           <summary><span>Education</span><span class="summary-note">NAIT · SAIT</span></summary>
           <div class="detail-content detail-grid">
-            <div>
-              <span class="detail-meta">NAIT</span>
-              <h3>Forest Technology Diploma</h3>
-            </div>
-            <div>
-              <span class="detail-meta">SAIT</span>
-              <h3>Bachelor of Applied Technology in Geographic Information Systems</h3>
-            </div>
+            <div><span class="detail-meta">NAIT</span><h3>Forest Technology Diploma</h3></div>
+            <div><span class="detail-meta">SAIT</span><h3>Bachelor of Applied Technology in Geographic Information Systems</h3></div>
           </div>
         </details>
 
@@ -51,10 +57,7 @@
               <h3>Registered Professional Forest Technologist (RPFT)</h3>
               <p>Current annual practice permit valid July 27, 2026 to June 30, 2027.</p>
             </div>
-            <div>
-              <span class="detail-meta">Interprovincial Red Seal</span>
-              <h3>Journeyperson Insulator</h3>
-            </div>
+            <div><span class="detail-meta">Interprovincial Red Seal</span><h3>Journeyperson Insulator</h3></div>
           </div>
         </details>
 
@@ -78,52 +81,46 @@
 
     <section class="section-block projects" id="projects">
       <div class="section-head">
-        <div>
-          <p class="kicker">Selected Work</p>
-          <h1>Projects</h1>
-        </div>
-        <p>Professional, environmental and cartographic GIS work.</p>
+        <div><p class="kicker">Selected Work</p><h1>Projects</h1></div>
+        <p>Click any project to open the map at a larger size.</p>
       </div>
 
       <div class="project-gallery">
-        <article class="project-card">
-          <div class="image-wrap"><a href="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg/v1/fill/w_800,h_600,al_c/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" alt="Crown Land Reservations GIS project map"></a></div>
-          <div class="project-caption"><span>Regulatory GIS</span><h2>Crown Land Reservations</h2></div>
-        </article>
+        <a class="project-link" href="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" target="_blank" rel="noopener">
+          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg/v1/fill/w_360,h_593,al_c/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" alt="Crown Land Reservations GIS project map"></div>
+          <div class="project-caption"><span>Regulatory GIS</span><h2>Crown Land Reservations</h2><small class="project-open">View larger ↗</small></div>
+        </a>
 
-        <article class="project-card">
-          <div class="image-wrap"><a href="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg/v1/fill/w_800,h_600,al_c/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" alt="Tree Planting Quality Assessment GIS project"></a></div>
-          <div class="project-caption"><span>Field GIS</span><h2>Tree Planting Quality Assessment</h2></div>
-        </article>
+        <a class="project-link" href="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" target="_blank" rel="noopener">
+          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg/v1/fill/w_360,h_571,al_c/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" alt="Tree Planting Quality Assessment GIS project"></div>
+          <div class="project-caption"><span>Field GIS</span><h2>Tree Planting Quality Assessment</h2><small class="project-open">View larger ↗</small></div>
+        </a>
 
-        <article class="project-card">
-          <div class="image-wrap"><a href="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg/v1/fill/w_800,h_600,al_c/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" alt="Wildhay River Basin Erosion analysis map"></a></div>
-          <div class="project-caption"><span>Environmental Analysis</span><h2>Wildhay River Basin Erosion</h2></div>
-        </article>
+        <a class="project-link" href="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" target="_blank" rel="noopener">
+          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg/v1/fill/w_540,h_360,al_c/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" alt="Wildhay River Basin Erosion analysis map"></div>
+          <div class="project-caption"><span>Environmental Analysis</span><h2>Wildhay River Basin Erosion</h2><small class="project-open">View larger ↗</small></div>
+        </a>
 
-        <article class="project-card">
-          <div class="image-wrap"><a href="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg/v1/fill/w_800,h_600,al_c/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" alt="Caribou anthropogenic disturbance map"></a></div>
-          <div class="project-caption"><span>Wildlife</span><h2>Anthropogenic Disturbance on Caribou</h2></div>
-        </article>
+        <a class="project-link" href="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" target="_blank" rel="noopener">
+          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg/v1/fill/w_360,h_466,al_c/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" alt="Caribou anthropogenic disturbance map"></div>
+          <div class="project-caption"><span>Wildlife</span><h2>Anthropogenic Disturbance on Caribou</h2><small class="project-open">View larger ↗</small></div>
+        </a>
 
-        <article class="project-card">
-          <div class="image-wrap"><a href="https://static.wixstatic.com/media/f94030_e5cf059cf6f0404fa02f74333aead0b8~mv2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_e5cf059cf6f0404fa02f74333aead0b8~mv2.jpg/v1/fill/w_800,h_600,al_c/f94030_e5cf059cf6f0404fa02f74333aead0b8~mv2.jpg" alt="Alberta Orphan Wells thematic map"></a></div>
-          <div class="project-caption"><span>Thematic Mapping</span><h2>Alberta Orphan Wells</h2></div>
-        </article>
+        <a class="project-link" href="https://static.wixstatic.com/media/f94030_e5cf059cf6f0404fa02f74333aead0b8~mv2.jpg" target="_blank" rel="noopener">
+          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_e5cf059cf6f0404fa02f74333aead0b8~mv2.jpg/v1/fill/w_540,h_405,al_c/f94030_e5cf059cf6f0404fa02f74333aead0b8~mv2.jpg" alt="Alberta Orphan Wells thematic map"></div>
+          <div class="project-caption"><span>Thematic Mapping</span><h2>Alberta Orphan Wells</h2><small class="project-open">View larger ↗</small></div>
+        </a>
 
-        <article class="project-card">
-          <div class="image-wrap"><a href="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg/v1/fill/w_800,h_600,al_c/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" alt="Human Development in Africa bivariate map"></a></div>
-          <div class="project-caption"><span>Cartography</span><h2>Human Development in Africa</h2></div>
-        </article>
+        <a class="project-link" href="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" target="_blank" rel="noopener">
+          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg/v1/fill/w_540,h_349,al_c/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" alt="Human Development in Africa bivariate map"></div>
+          <div class="project-caption"><span>Cartography</span><h2>Human Development in Africa</h2><small class="project-open">View larger ↗</small></div>
+        </a>
       </div>
     </section>
 
     <section class="section-block tools" id="tools">
       <div class="section-head">
-        <div>
-          <p class="kicker">Live Work</p>
-          <h1>GIS Tools</h1>
-        </div>
+        <div><p class="kicker">Live Work</p><h1>GIS Tools</h1></div>
         <p>Browser-based utilities for common Alberta GIS workflows.</p>
       </div>
 
