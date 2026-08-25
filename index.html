@@ -5,19 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ryan Constantin | GIS, environmental, regulatory and forestry portfolio">
   <title>Ryan Constantin | Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <style>
-    .project-gallery{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;align-items:start!important}
-    .project-link{display:block!important;overflow:hidden!important;border:1px solid #d7dcda!important;border-radius:14px!important;background:#fff!important;text-decoration:none!important;color:inherit!important;box-shadow:0 8px 24px rgba(31,41,40,.05)!important;transition:transform .16s ease,box-shadow .16s ease!important;cursor:pointer!important}
-    .project-link:hover{transform:translateY(-3px)!important;box-shadow:0 14px 30px rgba(31,41,40,.10)!important}
-    .project-thumb{height:180px!important;padding:10px!important;background:#eef0ed!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
-    .project-thumb img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important}
-    .project-caption{min-height:92px!important;padding:14px 16px 18px!important}
-    .project-caption span{display:block!important;margin-bottom:6px!important;color:#2d5963!important;font-size:.66rem!important;font-weight:800!important;letter-spacing:.09em!important;text-transform:uppercase!important}
-    .project-caption h2{margin:0!important;font-size:1.25rem!important;line-height:1.12!important}
-    .project-open{display:block!important;margin-top:9px!important;color:#687271!important;font-size:.72rem!important;font-weight:700!important}
-    @media(max-width:900px){.project-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}.project-thumb{height:170px!important}}
-    @media(max-width:560px){.project-gallery{grid-template-columns:1fr!important}.project-thumb{height:220px!important}}
+    .about-summary{display:block!important;max-width:850px!important;margin-bottom:38px!important}
+    .about-summary h1{margin-bottom:22px!important}
+    .about-intro{max-width:760px!important}
+
+    .about-accordion{display:grid!important;grid-template-columns:1fr!important;gap:12px!important;max-width:980px!important}
+    .about-accordion details{width:100%!important}
+
+    .project-list{border-top:1px solid #d7dcda!important}
+    .project-item{border-bottom:1px solid #d7dcda!important}
+    .project-item summary{list-style:none!important;cursor:pointer!important;display:grid!important;grid-template-columns:1fr auto!important;gap:24px!important;align-items:center!important;padding:24px 0!important;font-family:Georgia,"Times New Roman",serif!important;font-size:clamp(1.45rem,2.2vw,2.25rem)!important;line-height:1.1!important}
+    .project-item summary::-webkit-details-marker{display:none!important}
+    .project-item summary::after{content:"+"!important;color:#2d5963!important;font-family:Arial,Helvetica,sans-serif!important;font-size:1.3rem!important;font-weight:400!important}
+    .project-item[open] summary::after{content:"−"!important}
+    .project-body{display:grid!important;grid-template-columns:minmax(0,.85fr) minmax(260px,.55fr)!important;gap:46px!important;align-items:start!important;padding:0 0 30px!important}
+    .project-description{max-width:680px!important;color:#687271!important;font-size:1rem!important;line-height:1.7!important}
+    .project-preview{max-width:360px!important;justify-self:end!important}
+    .project-preview img{display:block!important;width:100%!important;height:220px!important;object-fit:contain!important;background:#eef0ed!important;border:1px solid #d7dcda!important;border-radius:10px!important;padding:10px!important}
+    .project-full-link{display:inline-block!important;margin-top:10px!important;color:#2d5963!important;font-size:.76rem!important;font-weight:800!important;letter-spacing:.06em!important;text-transform:uppercase!important}
+
+    @media(max-width:760px){
+      .project-body{grid-template-columns:1fr!important;gap:20px!important}
+      .project-preview{justify-self:start!important;width:100%!important;max-width:420px!important}
+      .project-preview img{height:240px!important}
+    }
   </style>
 </head>
 <body>
@@ -37,7 +50,7 @@
     <section class="section-block about" id="about">
       <div class="about-summary">
         <h1>About Me</h1>
-        <p class="about-intro">I began my career in the trades before moving into forestry, environmental, regulatory and geospatial work. My current work includes GIS analysis, mapping, field data workflows, reclamation support and regulatory applications.</p>
+        <p class="about-intro">I began my career in the trades before moving into forestry, environmental, regulatory and geospatial work. My current work includes GIS analysis, mapping, field data collection, reclamation support and regulatory applications.</p>
       </div>
 
       <div class="about-accordion">
@@ -82,46 +95,82 @@
     <section class="section-block projects" id="projects">
       <div class="section-head">
         <div><p class="kicker">Selected Work</p><h1>Projects</h1></div>
-        <p>Click any project to open the map at a larger size.</p>
+        <p>Select a project to view a short description and map.</p>
       </div>
 
-      <div class="project-gallery">
-        <a class="project-link" href="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" target="_blank" rel="noopener">
-          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg/v1/fill/w_360,h_593,al_c/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" alt="Crown Land Reservations GIS project map"></div>
-          <div class="project-caption"><span>Regulatory GIS</span><h2>Crown Land Reservations</h2><small class="project-open">View larger ↗</small></div>
-        </a>
+      <div class="project-list">
+        <details class="project-item">
+          <summary>Crown Land Reservations</summary>
+          <div class="project-body">
+            <p class="project-description">Prepared spatial data and regulatory mapping for Crown Land Reservation applications, including conflict review, attribute validation, QA/QC and final submission mapping.</p>
+            <div class="project-preview">
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg/v1/fill/w_360,h_593,al_c/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" alt="Crown Land Reservations GIS project map">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_b9cf9b665f0647658b2da2ad4dc3324a~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            </div>
+          </div>
+        </details>
 
-        <a class="project-link" href="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" target="_blank" rel="noopener">
-          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg/v1/fill/w_360,h_571,al_c/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" alt="Tree Planting Quality Assessment GIS project"></div>
-          <div class="project-caption"><span>Field GIS</span><h2>Tree Planting Quality Assessment</h2><small class="project-open">View larger ↗</small></div>
-        </a>
+        <details class="project-item">
+          <summary>Tree Planting Quality Assessment</summary>
+          <div class="project-body">
+            <p class="project-description">Used Survey123 and Field Maps to collect and review post-planting assessment data and summarize stocking, species mix and site conditions for follow-up and monitoring.</p>
+            <div class="project-preview">
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg/v1/fill/w_360,h_571,al_c/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" alt="Tree Planting Quality Assessment GIS project">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_8a00ba480c374887b6e4c9b797973395~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            </div>
+          </div>
+        </details>
 
-        <a class="project-link" href="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" target="_blank" rel="noopener">
-          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg/v1/fill/w_540,h_360,al_c/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" alt="Wildhay River Basin Erosion analysis map"></div>
-          <div class="project-caption"><span>Environmental Analysis</span><h2>Wildhay River Basin Erosion</h2><small class="project-open">View larger ↗</small></div>
-        </a>
+        <details class="project-item">
+          <summary>Wildhay River Basin Erosion</summary>
+          <div class="project-body">
+            <p class="project-description">Compared stream density, steep slopes and linear disturbance across five sub-basins to identify areas with greater erosion and disturbance concerns.</p>
+            <div class="project-preview">
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg/v1/fill/w_540,h_360,al_c/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" alt="Wildhay River Basin Erosion analysis map">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            </div>
+          </div>
+        </details>
 
-        <a class="project-link" href="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" target="_blank" rel="noopener">
-          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg/v1/fill/w_360,h_466,al_c/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" alt="Caribou anthropogenic disturbance map"></div>
-          <div class="project-caption"><span>Wildlife</span><h2>Anthropogenic Disturbance on Caribou</h2><small class="project-open">View larger ↗</small></div>
-        </a>
+        <details class="project-item">
+          <summary>Anthropogenic Disturbance on Caribou</summary>
+          <div class="project-body">
+            <p class="project-description">Mapped woodland caribou ranges with land use and industrial disturbance to show overlap with environmentally sensitive habitat and support interpretation of cumulative effects.</p>
+            <div class="project-preview">
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg/v1/fill/w_360,h_466,al_c/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" alt="Caribou anthropogenic disturbance map">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_75ec2f07b8cd4f4f9490bc947d2a1d32~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            </div>
+          </div>
+        </details>
 
-        <a class="project-link" href="https://static.wixstatic.com/media/f94030_a9caf26088dd4e0887ad10de772c9469~mv2.jpg" target="_blank" rel="noopener">
-          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_a9caf26088dd4e0887ad10de772c9469~mv2.jpg" alt="Alberta Orphan Wells thematic map"></div>
-          <div class="project-caption"><span>Thematic Mapping</span><h2>Alberta Orphan Wells</h2><small class="project-open">View larger ↗</small></div>
-        </a>
+        <details class="project-item">
+          <summary>Alberta Orphan Wells</summary>
+          <div class="project-body">
+            <p class="project-description">Mapped the spatial distribution of oil and gas wells to show development intensity and provide context for reclamation, land use and environmental analysis.</p>
+            <div class="project-preview">
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_a9caf26088dd4e0887ad10de772c9469~mv2.jpg" alt="Alberta Orphan Wells thematic map">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_a9caf26088dd4e0887ad10de772c9469~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            </div>
+          </div>
+        </details>
 
-        <a class="project-link" href="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" target="_blank" rel="noopener">
-          <div class="project-thumb"><img loading="lazy" src="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg/v1/fill/w_540,h_349,al_c/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" alt="Human Development in Africa bivariate map"></div>
-          <div class="project-caption"><span>Cartography</span><h2>Human Development in Africa</h2><small class="project-open">View larger ↗</small></div>
-        </a>
+        <details class="project-item">
+          <summary>Human Development in Africa</summary>
+          <div class="project-body">
+            <p class="project-description">Created a bivariate choropleth comparing life expectancy and gross national income across African countries, supported by individual reference maps for each variable.</p>
+            <div class="project-preview">
+              <img loading="lazy" src="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg/v1/fill/w_540,h_349,al_c/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" alt="Human Development in Africa bivariate map">
+              <a class="project-full-link" href="https://static.wixstatic.com/media/f94030_16f967b150e54a24a68834c385dded0a~mv2.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="section-block tools" id="tools">
       <div class="section-head">
         <div><p class="kicker">Live Work</p><h1>GIS Tools</h1></div>
-        <p>Browser-based utilities for common Alberta GIS workflows.</p>
+        <p>Browser-based utilities for common Alberta GIS tasks.</p>
       </div>
 
       <div class="tool-list">
