@@ -11,8 +11,15 @@
     .about-photo{width:220px;aspect-ratio:3/4;object-fit:cover;border-radius:14px;display:block}
     .about-summary h1{margin:0 0 18px}
     .about-intro{margin:0;line-height:1.75;color:#687271;font-size:1.05rem}
-    .about-accordion{display:grid;grid-template-columns:1fr;gap:12px;max-width:980px}
-    .about-accordion details{width:100%}
+    .about-list{max-width:980px;border-top:1px solid #d7dcda}
+    .about-group{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding:24px 0;border-bottom:1px solid #d7dcda}
+    .about-group h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;line-height:1.2}
+    .about-group-content{display:grid;gap:16px}
+    .about-entry{margin:0}
+    .about-entry .detail-meta{display:block;margin-bottom:5px}
+    .about-entry h3{margin:0 0 4px;font-size:1rem;line-height:1.35}
+    .about-entry p{margin:0;color:#687271;line-height:1.6}
+    .about-skills{display:flex;flex-wrap:wrap;gap:8px 18px;color:#4f5d5a;line-height:1.6}
 
     .projects-intro{max-width:760px;color:#687271;line-height:1.65}
     .project-carousel{margin-top:26px}
@@ -42,6 +49,7 @@
     @media(max-width:760px){
       .about-main{grid-template-columns:1fr;gap:24px}
       .about-photo{width:180px}
+      .about-group{grid-template-columns:1fr;gap:12px}
       .project-card{padding:20px}
       .project-preview{max-width:100%}
       .project-preview img{height:280px}
@@ -72,42 +80,53 @@
         </div>
       </div>
 
-      <div class="about-accordion">
-        <details>
-          <summary><span>Education</span><span class="summary-note">NAIT · SAIT</span></summary>
-          <div class="detail-content detail-grid">
-            <div><span class="detail-meta">NAIT</span><h3>Forest Technology Diploma</h3></div>
-            <div><span class="detail-meta">SAIT</span><h3>Bachelor of Applied Technology in Geographic Information Systems</h3></div>
+      <div class="about-list">
+        <section class="about-group" aria-labelledby="about-education">
+          <h2 id="about-education">Education</h2>
+          <div class="about-group-content">
+            <div class="about-entry">
+              <span class="detail-meta">NAIT</span>
+              <h3>Forest Technology Diploma</h3>
+            </div>
+            <div class="about-entry">
+              <span class="detail-meta">SAIT</span>
+              <h3>Bachelor of Applied Technology in Geographic Information Systems</h3>
+            </div>
           </div>
-        </details>
+        </section>
 
-        <details>
-          <summary><span>Professional Credentials</span><span class="summary-note">RPFT · Red Seal</span></summary>
-          <div class="detail-content detail-grid">
-            <div>
+        <section class="about-group" aria-labelledby="about-credentials">
+          <h2 id="about-credentials">Professional Credentials</h2>
+          <div class="about-group-content">
+            <div class="about-entry">
               <span class="detail-meta">Association of Alberta Forest Management Professionals</span>
               <h3>Registered Professional Forest Technologist (RPFT)</h3>
               <p>Current annual practice permit valid July 27, 2026 to June 30, 2027.</p>
             </div>
-            <div><span class="detail-meta">Interprovincial Red Seal</span><h3>Journeyperson Insulator</h3></div>
+            <div class="about-entry">
+              <span class="detail-meta">Interprovincial Red Seal</span>
+              <h3>Journeyperson Insulator</h3>
+            </div>
           </div>
-        </details>
+        </section>
 
-        <details>
-          <summary><span>Awards &amp; Recognition</span><span class="summary-note">Esri Canada</span></summary>
-          <div class="detail-content">
-            <span class="detail-meta">April 26, 2023</span>
-            <h3>Higher Education GIS Scholarship</h3>
-            <p>Esri Canada</p>
+        <section class="about-group" aria-labelledby="about-awards">
+          <h2 id="about-awards">Awards &amp; Recognition</h2>
+          <div class="about-group-content">
+            <div class="about-entry">
+              <span class="detail-meta">April 26, 2023</span>
+              <h3>Higher Education GIS Scholarship</h3>
+              <p>Esri Canada</p>
+            </div>
           </div>
-        </details>
+        </section>
 
-        <details>
-          <summary><span>Technical Skills</span><span class="summary-note">GIS · Field · Web</span></summary>
-          <div class="detail-content skills-list">
+        <section class="about-group" aria-labelledby="about-skills">
+          <h2 id="about-skills">Technical Skills</h2>
+          <div class="about-skills">
             <span>ArcGIS Pro</span><span>ArcGIS Online</span><span>Survey123</span><span>Field Maps</span><span>Spatial Analysis</span><span>Regulatory Mapping</span><span>Cartography</span><span>LiDAR &amp; Terrain</span><span>Coordinate Systems</span><span>Web GIS Tools</span>
           </div>
-        </details>
+        </section>
       </div>
     </section>
 
