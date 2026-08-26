@@ -20,9 +20,9 @@
   <title>Ryan Constantin | Portfolio</title>
   <link rel="icon" href="site-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <style>
-    .about-main{display:grid;grid-template-columns:220px minmax(0,760px);gap:42px;align-items:start;margin-bottom:34px}
+    .about-main{display:grid;grid-template-columns:220px minmax(0,760px) 330px;gap:42px;align-items:start;margin-bottom:34px}
     .about-photo{width:220px;aspect-ratio:3/4;object-fit:cover;border-radius:14px;display:block}
     .about-summary h1{margin:0 0 18px}
     .about-intro{margin:0;line-height:1.75;color:#687271;font-size:1.05rem}
@@ -65,9 +65,20 @@
     .contact-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid #bfc8c5;border-radius:999px;background:#fff;color:#2d5963;font-weight:700;text-decoration:none}
     .contact-links a:hover{background:#eef3f2}
 
+    .fieldwork-video-wrap{width:330px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:#dfe9e7;box-shadow:0 10px 30px rgba(31,41,40,.08)}
+    .fieldwork-video{display:block;width:100%;height:100%;object-fit:cover;background:#dfe9e7}
+    .project-slide:nth-of-type(5) .project-preview img{content:normal !important;object-fit:contain !important}
+    .project-slide:nth-of-type(5) .project-full-link{display:inline-block !important}
+
+    @media(max-width:1100px){
+      .about-main{grid-template-columns:220px minmax(0,1fr);gap:32px}
+      .fieldwork-video-wrap{grid-column:1/-1;width:330px}
+    }
+
     @media(max-width:760px){
       .about-main{grid-template-columns:1fr;gap:24px}
       .about-photo{width:180px}
+      .fieldwork-video-wrap{grid-column:auto;width:min(100%,270px)}
       .about-group{grid-template-columns:1fr;gap:12px}
       .project-card{padding:20px}
       .project-preview{max-width:100%}
@@ -99,9 +110,7 @@
           <p class="about-intro">I began my career in the trades before moving into forestry, environmental, regulatory and geospatial work. My current work includes GIS analysis, mapping, field data collection, reclamation support and regulatory applications.</p>
         </div>
         <div class="fieldwork-video-wrap">
-          <video class="fieldwork-video" autoplay muted loop playsinline preload="metadata" aria-label="Fieldwork aerial footage">
-            <source src="fieldwork-aerial.mp4" type="video/mp4">
-          </video>
+          <video class="fieldwork-video" autoplay muted loop playsinline preload="auto" aria-label="Fieldwork aerial footage"></video>
         </div>
       </div>
 
@@ -208,8 +217,8 @@
               <p>Completed a post-planting survey to verify stocking and species mix against the silviculture prescription and provincial regeneration standards. Designed and deployed Survey123 and Field Maps for consistent plot and tally data, including geo-tagged photos and notes on microsite, competing vegetation, and site prep. Performed QA/QC on incoming records, corrected geometry and projections, standardized attributes, and linked photos to features. Summarized stocking, density, and free-to-grow indicators by block and polygon, and produced a clean geodatabase with field points, plot summaries, and map layouts for stakeholders. Deliverables included a concise findings memo, PDF map series for field follow-up, and a data package suitable for ongoing monitoring and certification tracking.</p>
             </div>
             <div class="project-preview">
-              <img loading="lazy" src="tree-planting-survey-map.jpg" alt="Tree Planting Quality Assessment GIS project">
-              <a class="project-full-link" href="tree-planting-survey-map.jpg" target="_blank" rel="noopener">View full map ↗</a>
+              <img id="tree-planting-map" loading="lazy" src="tree-planting-survey-map.jpg" alt="Tree Planting Quality Assessment GIS project">
+              <a id="tree-planting-link" class="project-full-link" href="tree-planting-survey-map.jpg" target="_blank" rel="noopener">View full map ↗</a>
             </div>
           </div>
         </article>
@@ -302,6 +311,39 @@
       next.addEventListener('click', () => showProject(index + 1));
       dots.forEach((dot, i) => dot.addEventListener('click', () => showProject(i)));
       showProject(0);
+    })();
+
+    async function loadBase64(parts) {
+      const responses = await Promise.all(parts.map(url => fetch(url, {cache:'no-store'})));
+      for (const response of responses) {
+        if (!response.ok) throw new Error(`Media request failed: ${response.status}`);
+      }
+      return (await Promise.all(responses.map(r => r.text()))).join('').replace(/\s+/g,'');
+    }
+
+    (async () => {
+      const rawBase = 'https://raw.githubusercontent.com/RJConstantin/rjconstantin.github.io/media-fix/media-fix/';
+      try {
+        const [video64, map64] = await Promise.all([
+          loadBase64(['video-01.txt','video-02.txt','video-03.txt','video-04.txt'].map(f => rawBase + f)),
+          loadBase64(['tree-01.txt','tree-02-03.txt','tree-04-05.txt'].map(f => rawBase + f))
+        ]);
+
+        const video = document.querySelector('.fieldwork-video');
+        if (video) {
+          video.src = 'data:video/mp4;base64,' + video64;
+          video.load();
+          video.play().catch(() => {});
+        }
+
+        const mapData = 'data:image/jpeg;base64,' + map64;
+        const map = document.getElementById('tree-planting-map');
+        const link = document.getElementById('tree-planting-link');
+        if (map) map.src = mapData;
+        if (link) link.href = mapData;
+      } catch (error) {
+        console.error('Portfolio media failed to load', error);
+      }
     })();
   </script>
 </body>
