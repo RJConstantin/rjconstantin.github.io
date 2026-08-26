@@ -359,6 +359,42 @@ h1 {
   text-transform: uppercase;
 }
 
+/* Portfolio content overrides */
+.masthead-bottom {
+  font-size: 0;
+}
+
+.masthead-bottom span {
+  display: none;
+}
+
+.masthead-bottom::after {
+  content: "Environmental GIS Professional";
+  color: #77807f;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.site-footer span:last-child {
+  font-size: 0;
+}
+
+.site-footer span:last-child::after {
+  content: "Environmental GIS Professional";
+  font-size: .72rem;
+}
+
+.project-slide:nth-of-type(5) .project-preview img {
+  content: url("tree-planting-survey-map.jpg");
+  object-fit: contain;
+}
+
+.project-slide:nth-of-type(5) .project-full-link {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .about-summary,
   .section-head {
@@ -396,8 +432,12 @@ h1 {
 
   .masthead-bottom {
     margin-top: 22px;
-    font-size: .65rem;
+    font-size: 0;
     line-height: 1.8;
+  }
+
+  .masthead-bottom::after {
+    font-size: .65rem;
   }
 
   .section-block { padding: 66px 0; }
