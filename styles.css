@@ -475,3 +475,57 @@ h1 {
     gap: 8px;
   }
 }
+
+/* Opening fieldwork visual */
+.masthead-bottom::after {
+  content: "Environmental & GIS Professional";
+}
+
+.site-footer span:last-child::after {
+  content: "Environmental & GIS Professional";
+}
+
+.about .about-main {
+  grid-template-columns: 220px minmax(0, 1fr) 220px;
+  gap: 32px;
+  max-width: 1180px;
+}
+
+.about .about-summary {
+  display: block;
+  margin-bottom: 0;
+}
+
+.about .about-main::after {
+  content: "";
+  display: block;
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  background: #dfe9e7 url("fieldwork-loop.webp") center / cover no-repeat;
+  box-shadow: 0 10px 30px rgba(31, 41, 40, .08);
+}
+
+@media (max-width: 1000px) {
+  .about .about-main {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .about .about-main::after {
+    grid-column: 1 / -1;
+    width: min(100%, 520px);
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 760px) {
+  .about .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .about .about-main::after {
+    grid-column: auto;
+    width: min(100%, 360px);
+    aspect-ratio: 4 / 3;
+  }
+}
