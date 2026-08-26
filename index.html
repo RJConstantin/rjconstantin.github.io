@@ -22,13 +22,14 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="styles.css?v=10">
   <style>
+    *{font-family:Arial,Helvetica,sans-serif!important}
     .about-main{display:grid;grid-template-columns:220px minmax(0,760px) 330px;gap:42px;align-items:start;margin-bottom:34px}
     .about-photo{width:220px;aspect-ratio:3/4;object-fit:cover;border-radius:14px;display:block}
     .about-summary h1{margin:0 0 18px}
     .about-intro{margin:0;line-height:1.75;color:#687271;font-size:1.05rem}
     .about-list{max-width:980px;border-top:1px solid #d7dcda}
     .about-group{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding:24px 0;border-bottom:1px solid #d7dcda}
-    .about-group h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;line-height:1.2}
+    .about-group h2{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:1.35rem;line-height:1.2}
     .about-group-content{display:grid;gap:16px}
     .about-entry{margin:0}
     .about-entry .detail-meta{display:block;margin-bottom:5px}
@@ -41,7 +42,7 @@
     .project-slide{display:none}
     .project-slide.active{display:block}
     .project-card{border:1px solid #d7dcda;border-radius:16px;background:#fff;padding:28px}
-    .project-card h2{margin:0 0 18px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.7rem,3vw,2.55rem);line-height:1.12}
+    .project-card h2{margin:0 0 18px;font-family:Arial,Helvetica,sans-serif;font-size:clamp(1.7rem,3vw,2.55rem);line-height:1.12}
     .project-description{max-width:820px;color:#687271;font-size:1rem;line-height:1.72}
     .project-description p{margin:0 0 14px}
     .project-description ul{margin:8px 0 16px;padding-left:22px}
@@ -157,7 +158,6 @@
             <div class="about-entry">
               <span class="detail-meta">Association of Alberta Forest Management Professionals</span>
               <h3>Registered Professional Forest Technologist (RPFT)</h3>
-              <p>Current annual practice permit valid July 27, 2026 to June 30, 2027.</p>
             </div>
             <div class="about-entry"><span class="detail-meta">Interprovincial Red Seal</span><h3>Journeyperson Insulator</h3></div>
           </div>
@@ -181,16 +181,15 @@
 
     <section class="section-block projects" id="projects">
       <div class="section-head"><div><p class="kicker">Selected Work</p><h1>Projects</h1></div></div>
-      <p class="projects-intro">Use the arrows to move through selected GIS, environmental and regulatory projects. Each project includes a description, map preview and link to the full map.</p>
+      <p class="projects-intro">Use the arrows to move through selected GIS, environmental and regulatory projects.</p>
 
       <div class="project-carousel" aria-roledescription="carousel" aria-label="Selected projects">
         <article class="project-slide active" aria-hidden="false">
           <div class="project-card">
             <h2>Wildhay River Basin Erosion</h2>
             <div class="project-description">
-              <p>This project evaluates erosion risk across the Wildhay River Basin by comparing several spatial indicators that influence how water moves through the landscape, where slopes may be unstable, and where human disturbance may increase erosion potential. I divided the basin into five sub-basins so each area could be assessed individually and compared using the same criteria.</p>
-              <p>Stream density was calculated to identify areas with greater concentrations of drainage and potential surface-water movement. Slopes greater than 45° were mapped to highlight terrain more susceptible to erosion and instability. Roads, seismic lines, crossings, and other linear disturbances were also assessed because they can alter drainage patterns, expose soil, and increase erosion potential. These indicators were then considered together to identify sub-basins where multiple erosion-related factors overlap and where overall disturbance may be greatest.</p>
-              <p>I completed the spatial analysis, calculations, symbology, and final cartographic layout in ArcGIS Pro.</p>
+              <p>This project evaluates erosion across the Wildhay River Basin by examining the different erosion processes present throughout the watershed and the landscape conditions that contribute to them. While individual erosion features may have localized impacts, their cumulative effects can alter drainage patterns, increase sediment movement, destabilize slopes and streambanks, and contribute to broader landscape change.</p>
+              <p>The basin was divided into five sub-basins to compare erosion-related conditions spatially and identify areas where multiple contributing factors overlap. GIS analysis was used to examine terrain, drainage, linear disturbance and mapped erosion features, allowing areas with greater cumulative erosion potential to be identified and communicated through the final map.</p>
             </div>
             <div class="project-preview">
               <img loading="lazy" src="https://static.wixstatic.com/media/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg/v1/fill/w_900,h_600,al_c/f94030_2d9d4bbf9ab448a9acdc423d47dfaa32~mv2.jpg" alt="Wildhay River Basin Erosion analysis map">
