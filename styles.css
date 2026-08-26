@@ -529,3 +529,79 @@ h1 {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* Fieldwork video and project image fixes */
+.masthead-bottom,
+.site-footer span:last-child {
+  font-size: inherit;
+}
+
+.masthead-bottom::after,
+.site-footer span:last-child::after {
+  content: none !important;
+  display: none !important;
+}
+
+.about .about-main {
+  grid-template-columns: 220px minmax(0, 1fr) 330px;
+  gap: 32px;
+  max-width: 1290px;
+}
+
+.about .about-main::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+.fieldwork-video-wrap {
+  width: 330px;
+  align-self: start;
+}
+
+.fieldwork-video {
+  display: block;
+  width: 330px;
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: 0 10px 30px rgba(31, 41, 40, .08);
+}
+
+.project-slide:nth-of-type(5) .project-preview img {
+  content: normal !important;
+  object-fit: contain;
+}
+
+.project-slide:nth-of-type(5) .project-full-link {
+  display: inline-block !important;
+}
+
+@media (max-width: 1000px) {
+  .about .about-main {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .fieldwork-video-wrap {
+    grid-column: 1 / -1;
+    width: 270px;
+  }
+
+  .fieldwork-video {
+    width: 270px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldwork-video-wrap,
+  .fieldwork-video {
+    width: min(100%, 270px);
+  }
+}
