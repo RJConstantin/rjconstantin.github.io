@@ -67,8 +67,12 @@
 
     .fieldwork-video-wrap{width:330px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:#dfe9e7;box-shadow:0 10px 30px rgba(31,41,40,.08)}
     .fieldwork-video{display:block;width:100%;height:100%;object-fit:cover;background:#dfe9e7}
-    .project-slide:nth-of-type(5) .project-preview img{content:normal !important;object-fit:contain !important}
-    .project-slide:nth-of-type(5) .project-full-link{display:inline-block !important}
+    .tree-planting-preview{max-width:900px}
+    .tree-planting-media{display:grid;grid-template-columns:minmax(0,4fr) minmax(140px,1fr);gap:22px;align-items:start}
+    .tree-planting-map img{height:auto;max-height:520px;object-fit:contain}
+    .tree-planting-qr{padding-top:2px;text-align:center}
+    .tree-planting-qr img{width:100%;height:auto;max-width:170px;margin:0 auto;background:#fff;padding:8px}
+    .tree-planting-qr p{margin:10px auto 0;max-width:170px;color:#687271;font-size:.78rem;line-height:1.45}
 
     @media(max-width:1100px){
       .about-main{grid-template-columns:220px minmax(0,1fr);gap:32px}
@@ -83,6 +87,11 @@
       .project-card{padding:20px}
       .project-preview{max-width:100%}
       .project-preview img{height:280px}
+      .tree-planting-media{grid-template-columns:1fr}
+      .tree-planting-map img{height:auto;max-height:none}
+      .tree-planting-qr{text-align:left}
+      .tree-planting-qr img{max-width:150px;margin:0}
+      .tree-planting-qr p{margin:10px 0 0;max-width:180px}
       .carousel-controls{align-items:flex-start;flex-direction:column}
     }
   </style>
@@ -138,7 +147,7 @@
         <section class="about-group" aria-labelledby="about-awards">
           <h2 id="about-awards">Awards &amp; Recognition</h2>
           <div class="about-group-content">
-            <div class="about-entry"><span class="detail-meta">April 26, 2023</span><h3>Higher Education GIS Scholarship</h3><p>Esri Canada</p></div>
+            <div class="about-entry"><span class="detail-meta">Esri Canada</span><h3>Higher Education GIS Scholarship</h3></div>
           </div>
         </section>
 
@@ -216,9 +225,17 @@
             <div class="project-description">
               <p>Completed a post-planting survey to verify stocking and species mix against the silviculture prescription and provincial regeneration standards. Designed and deployed Survey123 and Field Maps for consistent plot and tally data, including geo-tagged photos and notes on microsite, competing vegetation, and site prep. Performed QA/QC on incoming records, corrected geometry and projections, standardized attributes, and linked photos to features. Summarized stocking, density, and free-to-grow indicators by block and polygon, and produced a clean geodatabase with field points, plot summaries, and map layouts for stakeholders. Deliverables included a concise findings memo, PDF map series for field follow-up, and a data package suitable for ongoing monitoring and certification tracking.</p>
             </div>
-            <div class="project-preview">
-              <img id="tree-planting-map" loading="lazy" src="tree-planting-survey-map.jpg" alt="Tree Planting Quality Assessment GIS project">
-              <a id="tree-planting-link" class="project-full-link" href="tree-planting-survey-map.jpg" target="_blank" rel="noopener">View full map ↗</a>
+            <div class="project-preview tree-planting-preview">
+              <div class="tree-planting-media">
+                <div class="tree-planting-map">
+                  <a href="tree-planting-original.png" target="_blank" rel="noopener"><img id="tree-planting-map" loading="lazy" src="tree-planting-original.png" alt="Tree Planting Quality Assessment GIS project map"></a>
+                  <a id="tree-planting-link" class="project-full-link" href="tree-planting-original.png" target="_blank" rel="noopener">View full map ↗</a>
+                </div>
+                <div class="tree-planting-qr">
+                  <img loading="lazy" src="tree-planting-qr.png" alt="QR code for the Survey123 tree planting field survey">
+                  <p>Survey123 field survey access</p>
+                </div>
+              </div>
             </div>
           </div>
         </article>
@@ -311,28 +328,6 @@
       next.addEventListener('click', () => showProject(index + 1));
       dots.forEach((dot, i) => dot.addEventListener('click', () => showProject(i)));
       showProject(0);
-    })();
-
-    async function loadBase64(parts) {
-      const responses = await Promise.all(parts.map(url => fetch(url, {cache:'no-store'})));
-      for (const response of responses) {
-        if (!response.ok) throw new Error(`Media request failed: ${response.status}`);
-      }
-      return (await Promise.all(responses.map(r => r.text()))).join('').replace(/\s+/g,'');
-    }
-
-    (async () => {
-      const rawBase = 'https://raw.githubusercontent.com/RJConstantin/rjconstantin.github.io/media-fix/media-fix/';
-      try {
-        const map64 = await loadBase64(['tree-01.txt','tree-02-03.txt','tree-04-05.txt'].map(f => rawBase + f));
-        const mapData = 'data:image/jpeg;base64,' + map64;
-        const map = document.getElementById('tree-planting-map');
-        const link = document.getElementById('tree-planting-link');
-        if (map) map.src = mapData;
-        if (link) link.href = mapData;
-      } catch (error) {
-        console.error('Tree planting map failed to load', error);
-      }
     })();
   </script>
 </body>
