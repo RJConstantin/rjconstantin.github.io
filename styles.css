@@ -605,3 +605,8 @@ h1 {
     width: min(100%, 270px);
   }
 }
+
+/* Segoe UI trial */
+html body * {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
