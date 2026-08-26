@@ -610,3 +610,17 @@ h1 {
 html body * {
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
+
+/* Keep project navigation in a consistent position above each project */
+.project-carousel {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.carousel-controls {
+  order: -1 !important;
+  margin: 0 0 18px !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
