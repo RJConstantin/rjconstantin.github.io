@@ -110,7 +110,7 @@
           <p class="about-intro">I began my career in the trades before moving into forestry, environmental, regulatory and geospatial work. My current work includes GIS analysis, mapping, field data collection, reclamation support and regulatory applications.</p>
         </div>
         <div class="fieldwork-video-wrap">
-          <video class="fieldwork-video" autoplay muted loop playsinline preload="auto" aria-label="Fieldwork aerial footage"></video>
+          <video class="fieldwork-video" src="fieldwork-original.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Fieldwork aerial footage"></video>
         </div>
       </div>
 
@@ -324,25 +324,14 @@
     (async () => {
       const rawBase = 'https://raw.githubusercontent.com/RJConstantin/rjconstantin.github.io/media-fix/media-fix/';
       try {
-        const [video64, map64] = await Promise.all([
-          loadBase64(['video-01.txt','video-02.txt','video-03.txt','video-04.txt'].map(f => rawBase + f)),
-          loadBase64(['tree-01.txt','tree-02-03.txt','tree-04-05.txt'].map(f => rawBase + f))
-        ]);
-
-        const video = document.querySelector('.fieldwork-video');
-        if (video) {
-          video.src = 'data:video/mp4;base64,' + video64;
-          video.load();
-          video.play().catch(() => {});
-        }
-
+        const map64 = await loadBase64(['tree-01.txt','tree-02-03.txt','tree-04-05.txt'].map(f => rawBase + f));
         const mapData = 'data:image/jpeg;base64,' + map64;
         const map = document.getElementById('tree-planting-map');
         const link = document.getElementById('tree-planting-link');
         if (map) map.src = mapData;
         if (link) link.href = mapData;
       } catch (error) {
-        console.error('Portfolio media failed to load', error);
+        console.error('Tree planting map failed to load', error);
       }
     })();
   </script>
